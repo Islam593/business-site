@@ -68,7 +68,7 @@ class PostController extends Controller
 
         $file_name = '';
         
-        $file_name = $this->fileUpload($request, 'media/posts/');
+        $file_name = $this->fileUpload($request,'image', 'media/posts/');
         
 
        

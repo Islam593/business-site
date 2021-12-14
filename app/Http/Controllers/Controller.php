@@ -15,11 +15,11 @@ class Controller extends BaseController
      * photo update system
      */
            
-     public function fileUpload($request, $path, string $data = NULL)
+     public function fileUpload($request,$field_name, $path, string $data = NULL)
      {
          
-        if($request-> hasFile('photo')){
-            $file = $request-> file('photo');
+        if($request-> hasFile($field_name)){
+            $file = $request-> file($field_name);
             $unique_name = md5(time().rand()).'.'. $file-> getClientOriginalExtension();
             $file-> move(public_path($path), $unique_name);
             if(file_exists($path . $data) && $data != NULL){
