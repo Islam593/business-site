@@ -28,6 +28,8 @@
 												<tr>
 													<th>#</th>
 													<th>Title</th>
+													
+													<th>Type</th>
 													<th>Date</th>
 													<th>Status</th>
 													<th>Action</th>
@@ -43,8 +45,15 @@
 												
 												<tr>
 													<td>{{ $loop->index +1}}</td>
-													<td>{{ $data-> title }}</td>
-													<td>{{ $data-> created_at }}</td>
+													<td>{{ Str::of($data-> title)->limit(25) }}</td>
+													<td>
+														@php
+															$featured = json_decode($data-> featured);
+															echo $featured-> post_type; 
+														@endphp 
+													</td>
+													<td>{{ $data-> created_at-> diffForHumans()}}</td>
+													{{--date('M d,Y', strtotime($data-> created_at))--}}
 													
                                                      
 													

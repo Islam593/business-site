@@ -64,20 +64,37 @@ class PostController extends Controller
 
         ]);
 
-        // Post type check
+        // Standard post upload
 
         $file_name = '';
-        
-        $file_name = $this->fileUpload($request,'image', 'media/posts/');
-        
+        if($request-> hasFile('photo')){
 
+            $file_name = $this->fileUpload($request,'image', 'media/posts/');
+        }
+        
+        
+        
        
+       // Gallery post upload
+
+       $gallery = [];
+
+      if($request->hasFile('gallery')){
+
+        foreach($request->file('gallery') as $gall){
+            $file_name = md5(time().rand()).'.'.$gall-> getClientOriginalExtension();
+            $gall-> move('media/posts',  $file_name);
+            array_push($gallery, $file_name);
+
+           
+        }
+      }
         
         $post_type_arr =[
 
           'post_type'  => $request->ptype,
           'post_image'  => $file_name,
-          'post_gallery'  => '',
+          'post_gallery'  => $gallery,
           'post_video'  => $request->video,
           'post_audio'  => $request->audio,
           'post_quotation'  => $request->quotation,
@@ -146,3 +163,5 @@ class PostController extends Controller
         //
     }
 }
+
+
