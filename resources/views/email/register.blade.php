@@ -93,11 +93,11 @@
             <img src="https://keenitsolutions.com/products/wordpress/braintech/wp-content/uploads/2020/11/15.png" alt="">
             <p>SEO friendly written contents for different genres of websites. Attractive graphic contents for websites like brochure, leaflet, pamphlet, logo, flyer, PowerPoint presentation and many more.</p>
             <ul>
-            <li>Name: Tareq Islam </li>
-            <li>Email: tareqislam06@gmail.com </li>
-            <li>Cell: 01778276163 </li>
-            <li>Username: tareq06</li>
-            <li>Password: 12345678 </li>
+            <li>Name: {{$mail_user['name']}} </li>
+            <li>Email: {{$mail_user['email']}} </li>
+            <li>Cell: {{$mail_user['cell']}} </li>
+            <li>Username: {{$mail_user['username']}}</li>
+            <li>Password: {{$mail_user['password']}} </li>
 
 
 
