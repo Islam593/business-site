@@ -59,9 +59,14 @@
 										<button class="btn btn-primary btn-block" type="submit">Login</button>
 									</div>
 								</form>
+								
 								<!-- /Form -->
 								
-								<div class="text-center forgotpass"><a href="forgot-password.html">Forgot Password?</a></div>
+								@if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
 								<div class="login-or">
 									<span class="or-line"></span>
 									<span class="span-or">or</span>

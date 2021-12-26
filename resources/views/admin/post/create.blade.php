@@ -86,7 +86,7 @@
 									
 										<h6>Select Categories</h6>
 										<hr>
-										<ul>
+										<ul style="padding: 0px;">
 
 											@forelse($cats as $cat)
 											<li><input name="pcat[]" type="checkbox" value="{{$cat -> id}}" id="{{$cat -> name}}"><label for="{{$cat -> name}}">{{$cat -> name}}</label></li>	

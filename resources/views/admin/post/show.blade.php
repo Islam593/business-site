@@ -58,7 +58,7 @@
 									</tr>
 									<tr>
 										<td>Photo</td>
-										<td><img src="{{ URL::to('public/media/users/'.$all_data-> photo)}}}" alt=""></td>
+										<td><img src="{{ URL::to('public/media/users/'.$all_data-> photo)}}" alt=""></td>
 									</tr>
 								
 					
