@@ -41,10 +41,11 @@
 
 								<style>
 
-                                 
-
-
+                                
 								</style>
+								@if (Session::has('success'))
+								<p class="alert alert-success">{{ Session::get('success')}}</p>
+								@endif
 								
 								<!-- Form -->
 								<form action="{{ route('login')}}" method="POST">

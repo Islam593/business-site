@@ -47,7 +47,7 @@
 												</tr>
 											</thead>
 											<tbody>
-                                              @foreach($all_data as $data)
+                                              @foreach($all_trash_data as $data)
 												  
 											 
 												
@@ -62,7 +62,7 @@
 
 													
 													<td>
-														<a class="btn btn-success" href="{{ route('user.trash', $data -> id)}}">Restore
+														<a class="btn btn-success" href="{{ route('user.trash',$data -> id)}}">Restore
 														</i></a>
 
 													

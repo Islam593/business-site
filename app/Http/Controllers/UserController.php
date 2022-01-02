@@ -62,7 +62,7 @@ class UserController extends Controller
       'name'  => $request-> name,
       'email'  => $request-> email,
       'password'  => Hash::make($request-> password),
-      'role_id'  => $request-> role
+      'role_id'  => $request-> role,
       //'photo'    => $file_name
 
 
@@ -121,7 +121,13 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-       User::find($id);
+        $data = User::find($id);
+
+        $data-> delete($id);
+        $data-> update();
+        return redirect()-> route('user.index');
+
+        
     }
 
 
@@ -151,8 +157,11 @@ class UserController extends Controller
         $data = User::latest()-> where('trash', 1)-> get();
         return view('admin.user.trash', [
 
-        'all_data'  =>  $data
+        'all_trash_data'  =>  $data,
+        
 
         ]);
+
+        
     }
 }

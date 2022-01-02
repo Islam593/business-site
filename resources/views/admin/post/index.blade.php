@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('page-name', 'Blog post create')
+@section('page-name', 'Blog Post Make')
 
 @section('main')
 <div class="content container-fluid">
@@ -16,7 +16,7 @@
 							
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">Category Data</h4>
+									<h4 class="card-title">Post Information</h4>
 									<a class="badge badge-info" href="{{ route('user.index')}}">Published</a>
 									<a class="badge badge-danger" href="{{ route('user.trash.all')}}">Trash</a>
 								</div>

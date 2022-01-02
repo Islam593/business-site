@@ -45,7 +45,6 @@ class PostController extends Controller
 
             'cats'        => $cats,
             'tags'       =>  $tags
-
         ]);
     }
 
@@ -82,9 +81,9 @@ class PostController extends Controller
       if($request->hasFile('gallery')){
 
         foreach($request->file('gallery') as $gall){
-            $file_name = md5(time().rand()).'.'.$gall-> getClientOriginalExtension();
-            $gall-> move('media/posts',  $file_name);
-            array_push($gallery, $file_name);
+            $gallery_file_name = md5(time().rand()).'.'.$gall-> getClientOriginalExtension();
+            $gall-> move('media/posts',  $gallery_file_name);
+            array_push($gallery, $gallery_file_name);
 
            
         }
@@ -98,9 +97,6 @@ class PostController extends Controller
           'post_video'  => $request->video,
           'post_audio'  => $request->audio,
           'post_quotation'  => $request->quotation,
-
-
-
 
         ];
 
@@ -160,7 +156,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $data = $post-> all();
+
     }
 }
 
