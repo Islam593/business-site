@@ -28,7 +28,7 @@
 										<div class="form-group row">
 											<label class="col-lg-3 col-form-label">User name</label>
 											<div class="col-lg-9">
-												<input name='name' type="text" class="form-control">
+												<input name='name' type="text" value="{{}}" class="form-control">
 											</div>
 										</div>
 										<div class="form-group row">

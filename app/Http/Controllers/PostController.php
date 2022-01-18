@@ -70,9 +70,7 @@ class PostController extends Controller
 
             $file_name = $this->fileUpload($request,'image', 'media/posts/');
         }
-        
-        
-        
+    
        
        // Gallery post upload
 
@@ -100,7 +98,7 @@ class PostController extends Controller
 
         ];
 
-        Post::create([
+        $post = Post::create([
 
         'title'     => $request-> title,
         'slug'      => $this->slugMake($request-> title),
@@ -110,6 +108,8 @@ class PostController extends Controller
         
 
         ]);
+
+        //$post -> categories-> attach();
 
         return back()->with('success', 'post made successful');
     }

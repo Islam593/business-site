@@ -44,14 +44,11 @@
 										<td>{{$all_data -> cell}}</td>
 									</tr>
 									<tr>
-										<td>Location</td>
-										<td>{{$all_data -> location}}</td>
+										<td>Username</td>
+										<td>{{$all_data -> username}}</td>
 									</tr>
 									
-									<tr>
-										<td>Gender</td>
-										<td>{{$all_data -> gender}}</td>
-									</tr>
+									
 									<tr>
 										<td>Status</td>
 										<td>Active</td>
