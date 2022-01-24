@@ -63,6 +63,8 @@ class PostController extends Controller
 
         ]);
 
+        
+
         // Standard post upload
 
         $file_name = '';
@@ -109,7 +111,7 @@ class PostController extends Controller
 
         ]);
 
-        //$post -> categories-> attach();
+        $post -> categories()-> attach($request-> pcat);
 
         return back()->with('success', 'post made successful');
     }
