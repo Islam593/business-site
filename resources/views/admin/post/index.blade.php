@@ -81,10 +81,16 @@
 
 													<a class="btn btn-info" href="#"><i class="fe fe-pencil">
 													</i></a>
+													<form class="d-inline" action="{{ route('post.destroy', $data-> id)}}" method="POST">
+														@csrf
+														@method('DELETE')
+
+                                                  <button class="btn btn-danger"><i class="fe fe-trash">
+												</i></button>
+
+													</form>
 													
-													<a class="btn btn-danger" href="#">
-														<i class="fe fe-trash">
-															</i></a>
+			
 													</td>
 
 												</tr>

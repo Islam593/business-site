@@ -11,9 +11,18 @@ class Post extends Model
 
     protected $guarded = [];
 
-
+// post and category relationship
     public function categories()
     {
         return $this-> belongsToMany('App\Models\Category');
     }
+
+    // post and category relationship
+public function tags()
+{
+    return $this-> belongsToMany('App\Models\Tag');
 }
+
+}
+
+

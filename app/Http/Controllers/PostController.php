@@ -100,6 +100,8 @@ class PostController extends Controller
 
         ];
 
+        // Data send 
+
         $post = Post::create([
 
         'title'     => $request-> title,
@@ -112,6 +114,7 @@ class PostController extends Controller
         ]);
 
         $post -> categories()-> attach($request-> pcat);
+        $post -> tags()-> attach($request-> ptag);
 
         return back()->with('success', 'post made successful');
     }
@@ -156,9 +159,14 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        $data = $post-> all();
+        $post = Post::find($id);
+        $post -> categories()-> detach( $post-> categories);
+        $post-> delete();
+
+
+        return back()->with('success', 'post deleted successful');;
 
     }
 }
