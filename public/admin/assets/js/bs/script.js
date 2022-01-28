@@ -78,7 +78,13 @@ $('.post-type-area').html(`<div class="form-group">
 }
 
 
+
+
 });
+
+// post table to data table
+
+$('#post').DataTable();
 
 
 

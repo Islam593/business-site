@@ -20,6 +20,8 @@
         <link rel="stylesheet" href="{{ asset('admin/assets/css/feathericon.min.css')}}">
 		
 		<link rel="stylesheet" href="{{ asset('admin/assets/plugins/morris/morris.css')}}">
+		<!-- Data table -->
+		<link rel="stylesheet" href="//cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css')}}">
@@ -206,10 +208,14 @@
 		<script  src="{{ asset('admin/assets/js/script.js')}}"></script>
 		<script  src="{{ asset('admin/assets/js/bs/script.js')}}"></script>
 
+	
+
 		<!-- Select 2 JS -->
 
 		<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+		<!-- Data table js---->
+		<script src="//cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 
 		<!-- CK editor---->
 		<script src="//cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>

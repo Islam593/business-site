@@ -63,4 +63,13 @@ Route::get('category-status/{id}', 'App\Http\Controllers\CategoryController@catS
 
 Route::resource('post', 'App\Http\Controllers\PostController');
 Route::get('post-status/{id}', 'App\Http\Controllers\PostController@postStatus')-> name('post.status');
+Route::get('test', 'App\Http\Controllers\CategoryController@test');
+
+Route::get('blog', function(){
+
+
+return view('comet.blog');
+
+});
+
 

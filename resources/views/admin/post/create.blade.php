@@ -2,8 +2,8 @@
 @section('page-name', 'Blog post create')
 @section('main')
 <div class="content container-fluid">
-	@include('page-header')	
 	
+	@include('page-header')	
 	@include('validate')
 	<form action="{{ route('post.store')}}" method="POST" enctype="multipart/form-data">			
 		@csrf

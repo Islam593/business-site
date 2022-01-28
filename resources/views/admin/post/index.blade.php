@@ -23,7 +23,7 @@
 
 								<div class="card-body">
 									<div class="table-responsive">
-										<table class="table mb-0">
+										<table id="post" class="table mb-0">
 											<thead>
 												<tr>
 													<th>#</th>
@@ -79,7 +79,7 @@
 														</i></a>
 														@endif
 
-													<a class="btn btn-info" href="#"><i class="fe fe-pencil">
+													<a class="btn btn-info" href="{{ route('post.edit', $data-> id)}}"><i class="fe fe-pencil">
 													</i></a>
 													<form class="d-inline" action="{{ route('post.destroy', $data-> id)}}" method="POST">
 														@csrf

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f92dca6b0b8ca69708e45a35a49e4caf",
+    "content-hash": "b9bb76b26043e0cb9243991391e93c5b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -876,6 +876,43 @@
                 "source": "https://github.com/guzzle/psr7/tree/2.0.0"
             },
             "time": "2021-06-30T20:03:07+00:00"
+        },
+        {
+            "name": "islamtareqgit/packagist",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/islamtareqgit/package.git",
+                "reference": "bb749dc377a713bc716056e9507a4c50efce5ea4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/islamtareqgit/package/zipball/bb749dc377a713bc716056e9507a4c50efce5ea4",
+                "reference": "bb749dc377a713bc716056e9507a4c50efce5ea4",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Islamtareqgit\\Packagist\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "tareqislam",
+                    "email": "blnre.tareq@gmail.com"
+                }
+            ],
+            "description": "this is a test project",
+            "support": {
+                "issues": "https://github.com/islamtareqgit/package/issues",
+                "source": "https://github.com/islamtareqgit/package/tree/1.0.0"
+            },
+            "time": "2022-01-28T15:11:57+00:00"
         },
         {
             "name": "laravel/framework",

@@ -17,13 +17,9 @@ class PostController extends Controller
      */
     public function index()
 
-    
     {
         $data = Post::latest()-> get();
-        
         return view('admin.post.index',[
-
-
        'all_data'    => $data,
        
 
@@ -136,9 +132,36 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        //
+        
+        $post= Post::find($id);
+        $cats = Category::where('status', true)-> get();
+        $tags = Tag::where('status', true)-> get();
+
+        // post category set
+
+        $cat_arr = [];
+        foreach($post-> categories as $cat){
+
+            array_push($cat_arr, $cat->id);
+        };
+
+        $tag_arr = [];
+        foreach($post-> tags as $tag){
+
+            array_push($tag_arr, $tag->id);
+        };
+    
+
+        return view('admin.post.edit',[
+            
+            'cats'        => $cats,
+            'tags'        =>  $tags,
+            'post'       => $post,
+            'cat_arr'    => $cat_arr,
+            'tag_arr'    => $tag_arr
+        ]);
     }
 
     /**
@@ -163,10 +186,11 @@ class PostController extends Controller
     {
         $post = Post::find($id);
         $post -> categories()-> detach( $post-> categories);
+        $post -> tags()-> detach($post-> tags);
         $post-> delete();
 
 
-        return back()->with('success', 'post deleted successful');;
+        return back()->with('success', 'post deleted successful with categories and tags');;
 
     }
 }
